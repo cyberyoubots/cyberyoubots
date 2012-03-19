@@ -16,15 +16,15 @@
 #
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
+from views.construction import UnderConstructionHandler
+
+MAIN_URL = [ ('/under_construction',  UnderConstructionHandler) ]
 
 
-class MainHandler(webapp.RequestHandler):
-    def get(self):
-        self.response.out.write('Hello world!')
-
-
+URL = MAIN_URL
+ 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler)],
+    application = webapp.WSGIApplication( URL ,
                                          debug=True)
     util.run_wsgi_app(application)
 
