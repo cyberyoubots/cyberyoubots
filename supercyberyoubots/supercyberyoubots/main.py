@@ -18,7 +18,8 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 from views.construction import UnderConstructionHandler
 
-MAIN_URL = [ ('/under_construction',  UnderConstructionHandler) ]
+MAIN_URL = [    ('/',  UnderConstructionHandler),
+                ('/under_construction',  UnderConstructionHandler) ]
 
 
 URL = MAIN_URL
